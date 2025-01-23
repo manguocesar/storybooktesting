@@ -6,6 +6,7 @@ import Task from './Task';
 export const ActionsData = {
     onArchiveTask: fn(),
     onPinTask: fn(),
+    unPinTask: fn(),
 };
 
 export default {

@@ -23,12 +23,10 @@ export default function TaskList() {
   const dispatch = useDispatch();
 
   const pinTask = (value) => {
-    // We're dispatching the Pinned event back to our store
     dispatch(updateTaskState({ id: value, newTaskState: 'TASK_PINNED' }));
   };
   
   const unPinTask = (value) => {
-    // We're dispatching the Pinned event back to our store
     dispatch(updateTaskState({ id: value, newTaskState: 'TASK_UNPINNED' }));
   };
   const archiveTask = (value) => {

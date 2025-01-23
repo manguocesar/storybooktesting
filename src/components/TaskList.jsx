@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateTaskState } from '../lib/store';
 
 export default function TaskList() {
-  // We're retrieving our state from the store
   const tasks = useSelector((state) => {
     const tasksInOrder = [
       ...state.taskbox.tasks.filter((t) => t.state === 'TASK_PINNED'),

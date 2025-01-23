@@ -327,8 +327,13 @@ textarea {
 }
 
 .list-item.TASK_ARCHIVED input[type="text"] {
-  color: #a0aec0;
+  color: #4a5568;
   text-decoration: line-through;
+}
+
+.list-item.TASK_TESTED input[type="text"] {
+  color: red;
+  text-decoration:underline;
 }
 
 .list-item:hover {

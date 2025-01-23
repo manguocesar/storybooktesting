@@ -38,6 +38,15 @@ export const Pinned = {
         },
     },
 };
+export const UnPinned = {
+    args: {
+        task: {
+            ...Default.args.task,
+            title: 'Test Task (unpinned)',
+            state: 'TASK_UNPINNED',
+        },
+    },
+};
 
 export const Archived = {
     args: {

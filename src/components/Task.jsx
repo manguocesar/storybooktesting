@@ -1,7 +1,8 @@
 
 import PropTypes from 'prop-types';
 
-export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
+export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask, onUnPinTask }) {
+
   return (
     <div className={`list-item ${state}`}>
       <label
@@ -35,7 +36,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
       {state !== "TASK_ARCHIVED" && (
         <button
           className="pin-button"
-          onClick={() => onPinTask(id)}
+          onClick={() => state === "TASK_PINNED" ? onUnPinTask(id) : onPinTask(id)}
           id={`pinTask-${id}`}
           aria-label={`pinTask-${id}`}
           key={`pinTask-${id}`}
@@ -46,7 +47,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
     </div>
   );
 }
- Task.propTypes = {
+Task.propTypes = {
   /** Composition of the task */
   task: PropTypes.shape({
     /** Id of the task */
@@ -60,4 +61,5 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
   onArchiveTask: PropTypes.func,
   /** Event to change the task to pinned */
   onPinTask: PropTypes.func,
- };
+  onUnPinTask: PropTypes.func,
+};
